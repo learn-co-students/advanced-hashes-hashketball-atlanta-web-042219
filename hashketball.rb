@@ -117,4 +117,12 @@ def player_stats(name)
 end
 end
   
+  
+def big_shoe_rebounds
+  result = []
+  for main_key in game_hash.keys
+    result << game_hash[main_key][:players].sort_by {|key,value| value[:shoe]}[-1][1][:rebounds]
+end
+result.max
+end
 
