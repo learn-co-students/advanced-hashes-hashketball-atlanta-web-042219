@@ -224,10 +224,32 @@ def winning_team
 end 
       
 
+def player_with_longest_name
+  longest_name = "" 
+  game_hash.each do |h_or_a, all_team_info|
+    all_team_info[:players].each do |player, stats|
+      if longest_name.length < player.length 
+        longest_name = player
+      end 
+    end 
+  end 
+  return longest_name
+end 
+ 
 
-
-
-
+def long_name_steals_a_ton?
+  most_steals = -1
+  highest_player_steals = nil 
+  game_hash.each do |h_or_a, all_team_info|
+    all_team_info[:players].each do |player, stats|
+       if most_steals < stats[:steals]
+          most_steals = stats[:steals]
+          highest_player_steals = player
+       end
+    end
+  end 
+  return  highest_player_steals == player_with_longest_name
+end 
 
 
 
