@@ -1,3 +1,5 @@
+require 'pry'
+
 def game_hash
   {
      :home => {
@@ -115,6 +117,13 @@ def game_hash
    }
  end
 
-def num_points_scored(player_name)
- game_hash[:home][:players][player_name][:points]
-end
+ def num_points_scored(player_name)
+    game_hash.each do |location,team_data|
+     #  puts team_data[:players][:points]
+     team_data.each do |name, colors, players|
+        # diggy = [:players][player_name][:points]
+        binding.pry
+        puts [:players][player_name][:points]
+     end
+    end
+ end
