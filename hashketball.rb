@@ -117,11 +117,24 @@ def game_hash
    }
  end
 
+# iterate over each team and if player_name = the given argument.... return the points
  def num_points_scored(player_name)
+   this_player = player_name
      game_hash.each do |team, team_data|
        team_data[:players].each do |player_name, player_data|
-         binding.pry
-         puts [player_data][:points].value
+          each_player = team_data[:players]
+          each_player.each do |name, data|
+            if name == this_player
+              binding.pry
+              player_data[:points]
+          # binding.pry
+          # each_points = player_data[:points]
+          # if this_player == each_player
+          #   puts each_points
+          # else
+          #
+        end
+        end
      end
      end
   end
