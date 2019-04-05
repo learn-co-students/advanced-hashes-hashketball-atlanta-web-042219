@@ -125,8 +125,8 @@ def game_hash
           each_player = team_data[:players]
           each_player.each do |name, data|
             if name == this_player
-              binding.pry
-              player_data[:points]
+              return player_data[:points]
+            else
           # binding.pry
           # each_points = player_data[:points]
           # if this_player == each_player
