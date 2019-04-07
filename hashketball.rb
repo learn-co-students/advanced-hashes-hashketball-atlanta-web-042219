@@ -118,23 +118,46 @@ def game_hash
  end
 
 # iterate over each team and if player_name = the given argument.... return the points
+# returning the score per player
  def num_points_scored(player_name)
    this_player = player_name
      game_hash.each do |team, team_data|
        team_data[:players].each do |player_name, player_data|
-          each_player = team_data[:players]
-          each_player.each do |name, data|
-            if name == this_player
+            if player_name == this_player
               return player_data[:points]
-            else
-          # binding.pry
-          # each_points = player_data[:points]
-          # if this_player == each_player
-          #   puts each_points
-          # else
-          #
-        end
+              #over thought it, got stuck too long.
         end
      end
      end
   end
+
+# returning the shoe size for each_player
+def shoe_size(player_name)
+  game_hash.each do |team, team_data|
+    team_data[:players].each do |this_player, player_data|
+         if player_name == this_player
+           return player_data[:shoe]
+     end
+  end
+  end
+end
+
+def team_colors(team_name)
+  game_hash.each do |team, team_data|
+  #  binding.pry
+   if team_data[:team_name] == team_name
+     return team_data[:colors]
+  end
+end
+end
+
+def team_name #(game_hash) => optional
+  game_hash.each do |team, team_data|
+    rtnd_team_name = []
+    binding.pry
+    team_data.each do |team_keys, team_vals|
+      binding.pry
+      puts team_vals
+    end
+   end
+end
