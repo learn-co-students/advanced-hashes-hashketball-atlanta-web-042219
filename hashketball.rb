@@ -10,7 +10,10 @@
 | **Steals**         | 3             | 12           | 3            | 3             | 4             |
 | **Blocks**         | 1             | 12           | 1            | 8             | 11            |
 | **Slam Dunks**     | 1             | 7            | 15           | 5             | 1             |
-
+game_hash[:home][:players]
+player = all_players[players_mame]
+  player[:points]
+#return that player's points
 
 
 
